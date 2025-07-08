@@ -1,0 +1,39 @@
+---
+title: "Policy Optimization Tool Emissions Database"
+author: "Renato Vargas"
+format: revealjs
+---
+
+# Introduction
+
+Policy Optimization Tool (PolOpT) Emissions Database (EmDb)
+
+## Context
+
+::: {.incremental}
+- MAFAP seeks to establish country owned and sustainable systems to monitor, analyse, and reform food and agricultural policies to enable more effective, efficient and inclusive policy frameworks in developing and emerging economies.
+
+- The Policy Optimization Tool (PolOpT) has been developed with CGE and and multi-criteria decision-making techniques to analyze agriculture sector public budget optimization scenarios.
+
+:::
+
+## Objectives
+:::: {.columns}
+
+
+:::{.incremental}
+::: {.column width="50%"}
+* **Existing Inclusive Agricultural Objectives**
+  - Maximize agrifood GDP.
+  - Minimize rural poverty.
+  - Maximize rural off-farm employment.
+  - Minimize the cost of a healthy diet.
+:::
+
+::: {.column width="50%"}
+* **New objectives**
+  - Optimize biodiversity.
+  - Minimize Greenhouse Gas Emissions.
+:::
+
+:::
