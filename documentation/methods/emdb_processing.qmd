@@ -724,6 +724,9 @@ gwp_faostat_total <- rbind(
   filter(! is.na(ISO3)) |> 
   relocate(`IPCC Code`, `IPCC`, .before = Year) |> 
   relocate(ISO3, .before = `Driver Code`)
+
+gwp_faostat_total$`Area Code`[gwp_faostat_total$`Area Code`== 62] <- 238
+gwp_faostat_total$Area[gwp_faostat_total$Area== "Ethiopia PDR"] <- "Ethiopia"
   
 
 # And save to RDS
