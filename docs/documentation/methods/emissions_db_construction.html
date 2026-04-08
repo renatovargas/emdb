@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,14 +53,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-858f586298d17259b84a7299c9278920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13a8c907e9a8152a2dc7fb04cae9e79d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,7 +104,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -129,6 +130,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PolOpT EMDB</span>
     </a>
@@ -140,7 +143,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -176,6 +179,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -615,23 +622,23 @@ Table&nbsp;4: FAOSTAT domains sourced
 </figcaption>
 <div aria-describedby="tbl-faostat-domains-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="uxmkqqyckk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#uxmkqqyckk table {
+<div id="glxidyeqsk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#glxidyeqsk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uxmkqqyckk thead, #uxmkqqyckk tbody, #uxmkqqyckk tfoot, #uxmkqqyckk tr, #uxmkqqyckk td, #uxmkqqyckk th {
+#glxidyeqsk thead, #glxidyeqsk tbody, #glxidyeqsk tfoot, #glxidyeqsk tr, #glxidyeqsk td, #glxidyeqsk th {
   border-style: none;
 }
 
-#uxmkqqyckk p {
+#glxidyeqsk p {
   margin: 0;
   padding: 0;
 }
 
-#uxmkqqyckk .gt_table {
+#glxidyeqsk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -657,12 +664,12 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-left-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_caption {
+#glxidyeqsk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uxmkqqyckk .gt_title {
+#glxidyeqsk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -674,7 +681,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-bottom-width: 0;
 }
 
-#uxmkqqyckk .gt_subtitle {
+#glxidyeqsk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -686,7 +693,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-top-width: 0;
 }
 
-#uxmkqqyckk .gt_heading {
+#glxidyeqsk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -698,13 +705,13 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_bottom_border {
+#glxidyeqsk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_col_headings {
+#glxidyeqsk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -719,7 +726,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_col_heading {
+#glxidyeqsk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -739,7 +746,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   overflow-x: hidden;
 }
 
-#uxmkqqyckk .gt_column_spanner_outer {
+#glxidyeqsk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -751,15 +758,15 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 4px;
 }
 
-#uxmkqqyckk .gt_column_spanner_outer:first-child {
+#glxidyeqsk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uxmkqqyckk .gt_column_spanner_outer:last-child {
+#glxidyeqsk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uxmkqqyckk .gt_column_spanner {
+#glxidyeqsk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -771,11 +778,11 @@ Table&nbsp;4: FAOSTAT domains sourced
   width: 100%;
 }
 
-#uxmkqqyckk .gt_spanner_row {
+#glxidyeqsk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uxmkqqyckk .gt_group_heading {
+#glxidyeqsk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -801,7 +808,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   text-align: left;
 }
 
-#uxmkqqyckk .gt_empty_group_heading {
+#glxidyeqsk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -816,15 +823,15 @@ Table&nbsp;4: FAOSTAT domains sourced
   vertical-align: middle;
 }
 
-#uxmkqqyckk .gt_from_md > :first-child {
+#glxidyeqsk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uxmkqqyckk .gt_from_md > :last-child {
+#glxidyeqsk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uxmkqqyckk .gt_row {
+#glxidyeqsk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -843,7 +850,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   overflow-x: hidden;
 }
 
-#uxmkqqyckk .gt_stub {
+#glxidyeqsk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -856,7 +863,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#uxmkqqyckk .gt_stub_row_group {
+#glxidyeqsk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -870,15 +877,15 @@ Table&nbsp;4: FAOSTAT domains sourced
   vertical-align: top;
 }
 
-#uxmkqqyckk .gt_row_group_first td {
+#glxidyeqsk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uxmkqqyckk .gt_row_group_first th {
+#glxidyeqsk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uxmkqqyckk .gt_summary_row {
+#glxidyeqsk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -888,16 +895,16 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#uxmkqqyckk .gt_first_summary_row {
+#glxidyeqsk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_first_summary_row.thick {
+#glxidyeqsk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uxmkqqyckk .gt_last_summary_row {
+#glxidyeqsk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -907,7 +914,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_grand_summary_row {
+#glxidyeqsk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -917,7 +924,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#uxmkqqyckk .gt_first_grand_summary_row {
+#glxidyeqsk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -927,7 +934,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-top-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_last_grand_summary_row_top {
+#glxidyeqsk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -937,11 +944,11 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_striped {
+#glxidyeqsk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uxmkqqyckk .gt_table_body {
+#glxidyeqsk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -950,7 +957,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_footnotes {
+#glxidyeqsk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -964,7 +971,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_footnote {
+#glxidyeqsk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -973,7 +980,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#uxmkqqyckk .gt_sourcenotes {
+#glxidyeqsk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -987,7 +994,7 @@ Table&nbsp;4: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#uxmkqqyckk .gt_sourcenote {
+#glxidyeqsk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -995,77 +1002,77 @@ Table&nbsp;4: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#uxmkqqyckk .gt_left {
+#glxidyeqsk .gt_left {
   text-align: left;
 }
 
-#uxmkqqyckk .gt_center {
+#glxidyeqsk .gt_center {
   text-align: center;
 }
 
-#uxmkqqyckk .gt_right {
+#glxidyeqsk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uxmkqqyckk .gt_font_normal {
+#glxidyeqsk .gt_font_normal {
   font-weight: normal;
 }
 
-#uxmkqqyckk .gt_font_bold {
+#glxidyeqsk .gt_font_bold {
   font-weight: bold;
 }
 
-#uxmkqqyckk .gt_font_italic {
+#glxidyeqsk .gt_font_italic {
   font-style: italic;
 }
 
-#uxmkqqyckk .gt_super {
+#glxidyeqsk .gt_super {
   font-size: 65%;
 }
 
-#uxmkqqyckk .gt_footnote_marks {
+#glxidyeqsk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uxmkqqyckk .gt_asterisk {
+#glxidyeqsk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uxmkqqyckk .gt_indent_1 {
+#glxidyeqsk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uxmkqqyckk .gt_indent_2 {
+#glxidyeqsk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uxmkqqyckk .gt_indent_3 {
+#glxidyeqsk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uxmkqqyckk .gt_indent_4 {
+#glxidyeqsk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uxmkqqyckk .gt_indent_5 {
+#glxidyeqsk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uxmkqqyckk .katex-display {
+#glxidyeqsk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uxmkqqyckk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#glxidyeqsk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="Code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Code</th>
@@ -1159,23 +1166,23 @@ Table&nbsp;5: FAOSTAT domains sourced
 </figcaption>
 <div aria-describedby="tbl-faostat-subsectors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="nvwfmqkbso" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nvwfmqkbso table {
+<div id="spdzzidlul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#spdzzidlul table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nvwfmqkbso thead, #nvwfmqkbso tbody, #nvwfmqkbso tfoot, #nvwfmqkbso tr, #nvwfmqkbso td, #nvwfmqkbso th {
+#spdzzidlul thead, #spdzzidlul tbody, #spdzzidlul tfoot, #spdzzidlul tr, #spdzzidlul td, #spdzzidlul th {
   border-style: none;
 }
 
-#nvwfmqkbso p {
+#spdzzidlul p {
   margin: 0;
   padding: 0;
 }
 
-#nvwfmqkbso .gt_table {
+#spdzzidlul .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1201,12 +1208,12 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-left-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_caption {
+#spdzzidlul .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nvwfmqkbso .gt_title {
+#spdzzidlul .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1218,7 +1225,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-bottom-width: 0;
 }
 
-#nvwfmqkbso .gt_subtitle {
+#spdzzidlul .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1230,7 +1237,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-top-width: 0;
 }
 
-#nvwfmqkbso .gt_heading {
+#spdzzidlul .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1242,13 +1249,13 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_bottom_border {
+#spdzzidlul .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_col_headings {
+#spdzzidlul .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1263,7 +1270,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_col_heading {
+#spdzzidlul .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1283,7 +1290,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   overflow-x: hidden;
 }
 
-#nvwfmqkbso .gt_column_spanner_outer {
+#spdzzidlul .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1295,15 +1302,15 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 4px;
 }
 
-#nvwfmqkbso .gt_column_spanner_outer:first-child {
+#spdzzidlul .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nvwfmqkbso .gt_column_spanner_outer:last-child {
+#spdzzidlul .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nvwfmqkbso .gt_column_spanner {
+#spdzzidlul .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1315,11 +1322,11 @@ Table&nbsp;5: FAOSTAT domains sourced
   width: 100%;
 }
 
-#nvwfmqkbso .gt_spanner_row {
+#spdzzidlul .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nvwfmqkbso .gt_group_heading {
+#spdzzidlul .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1345,7 +1352,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   text-align: left;
 }
 
-#nvwfmqkbso .gt_empty_group_heading {
+#spdzzidlul .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1360,15 +1367,15 @@ Table&nbsp;5: FAOSTAT domains sourced
   vertical-align: middle;
 }
 
-#nvwfmqkbso .gt_from_md > :first-child {
+#spdzzidlul .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nvwfmqkbso .gt_from_md > :last-child {
+#spdzzidlul .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nvwfmqkbso .gt_row {
+#spdzzidlul .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1387,7 +1394,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   overflow-x: hidden;
 }
 
-#nvwfmqkbso .gt_stub {
+#spdzzidlul .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1400,7 +1407,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#nvwfmqkbso .gt_stub_row_group {
+#spdzzidlul .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1414,15 +1421,15 @@ Table&nbsp;5: FAOSTAT domains sourced
   vertical-align: top;
 }
 
-#nvwfmqkbso .gt_row_group_first td {
+#spdzzidlul .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nvwfmqkbso .gt_row_group_first th {
+#spdzzidlul .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nvwfmqkbso .gt_summary_row {
+#spdzzidlul .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1432,16 +1439,16 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#nvwfmqkbso .gt_first_summary_row {
+#spdzzidlul .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_first_summary_row.thick {
+#spdzzidlul .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nvwfmqkbso .gt_last_summary_row {
+#spdzzidlul .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1451,7 +1458,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_grand_summary_row {
+#spdzzidlul .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1461,7 +1468,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#nvwfmqkbso .gt_first_grand_summary_row {
+#spdzzidlul .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1471,7 +1478,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-top-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_last_grand_summary_row_top {
+#spdzzidlul .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1481,11 +1488,11 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_striped {
+#spdzzidlul .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nvwfmqkbso .gt_table_body {
+#spdzzidlul .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1494,7 +1501,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-bottom-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_footnotes {
+#spdzzidlul .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1508,7 +1515,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_footnote {
+#spdzzidlul .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1517,7 +1524,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#nvwfmqkbso .gt_sourcenotes {
+#spdzzidlul .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1531,7 +1538,7 @@ Table&nbsp;5: FAOSTAT domains sourced
   border-right-color: #D3D3D3;
 }
 
-#nvwfmqkbso .gt_sourcenote {
+#spdzzidlul .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1539,77 +1546,77 @@ Table&nbsp;5: FAOSTAT domains sourced
   padding-right: 5px;
 }
 
-#nvwfmqkbso .gt_left {
+#spdzzidlul .gt_left {
   text-align: left;
 }
 
-#nvwfmqkbso .gt_center {
+#spdzzidlul .gt_center {
   text-align: center;
 }
 
-#nvwfmqkbso .gt_right {
+#spdzzidlul .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nvwfmqkbso .gt_font_normal {
+#spdzzidlul .gt_font_normal {
   font-weight: normal;
 }
 
-#nvwfmqkbso .gt_font_bold {
+#spdzzidlul .gt_font_bold {
   font-weight: bold;
 }
 
-#nvwfmqkbso .gt_font_italic {
+#spdzzidlul .gt_font_italic {
   font-style: italic;
 }
 
-#nvwfmqkbso .gt_super {
+#spdzzidlul .gt_super {
   font-size: 65%;
 }
 
-#nvwfmqkbso .gt_footnote_marks {
+#spdzzidlul .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nvwfmqkbso .gt_asterisk {
+#spdzzidlul .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nvwfmqkbso .gt_indent_1 {
+#spdzzidlul .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nvwfmqkbso .gt_indent_2 {
+#spdzzidlul .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nvwfmqkbso .gt_indent_3 {
+#spdzzidlul .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nvwfmqkbso .gt_indent_4 {
+#spdzzidlul .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nvwfmqkbso .gt_indent_5 {
+#spdzzidlul .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nvwfmqkbso .katex-display {
+#spdzzidlul .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nvwfmqkbso div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#spdzzidlul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="Code" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Code</th>
@@ -1935,23 +1942,23 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
 </figcaption>
 <div aria-describedby="tbl-total-emissions-by-isic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="xozhybwrra" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xozhybwrra table {
+<div id="zhnndmkuyq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zhnndmkuyq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xozhybwrra thead, #xozhybwrra tbody, #xozhybwrra tfoot, #xozhybwrra tr, #xozhybwrra td, #xozhybwrra th {
+#zhnndmkuyq thead, #zhnndmkuyq tbody, #zhnndmkuyq tfoot, #zhnndmkuyq tr, #zhnndmkuyq td, #zhnndmkuyq th {
   border-style: none;
 }
 
-#xozhybwrra p {
+#zhnndmkuyq p {
   margin: 0;
   padding: 0;
 }
 
-#xozhybwrra .gt_table {
+#zhnndmkuyq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1977,12 +1984,12 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-left-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_caption {
+#zhnndmkuyq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xozhybwrra .gt_title {
+#zhnndmkuyq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1994,7 +2001,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-bottom-width: 0;
 }
 
-#xozhybwrra .gt_subtitle {
+#zhnndmkuyq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2006,7 +2013,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-top-width: 0;
 }
 
-#xozhybwrra .gt_heading {
+#zhnndmkuyq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2018,13 +2025,13 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-right-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_bottom_border {
+#zhnndmkuyq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_col_headings {
+#zhnndmkuyq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2039,7 +2046,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-right-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_col_heading {
+#zhnndmkuyq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2059,7 +2066,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   overflow-x: hidden;
 }
 
-#xozhybwrra .gt_column_spanner_outer {
+#zhnndmkuyq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2071,15 +2078,15 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 4px;
 }
 
-#xozhybwrra .gt_column_spanner_outer:first-child {
+#zhnndmkuyq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xozhybwrra .gt_column_spanner_outer:last-child {
+#zhnndmkuyq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xozhybwrra .gt_column_spanner {
+#zhnndmkuyq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2091,11 +2098,11 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   width: 100%;
 }
 
-#xozhybwrra .gt_spanner_row {
+#zhnndmkuyq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xozhybwrra .gt_group_heading {
+#zhnndmkuyq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2121,7 +2128,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   text-align: left;
 }
 
-#xozhybwrra .gt_empty_group_heading {
+#zhnndmkuyq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2136,15 +2143,15 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   vertical-align: middle;
 }
 
-#xozhybwrra .gt_from_md > :first-child {
+#zhnndmkuyq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xozhybwrra .gt_from_md > :last-child {
+#zhnndmkuyq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xozhybwrra .gt_row {
+#zhnndmkuyq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2163,7 +2170,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   overflow-x: hidden;
 }
 
-#xozhybwrra .gt_stub {
+#zhnndmkuyq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2176,7 +2183,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 5px;
 }
 
-#xozhybwrra .gt_stub_row_group {
+#zhnndmkuyq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2190,15 +2197,15 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   vertical-align: top;
 }
 
-#xozhybwrra .gt_row_group_first td {
+#zhnndmkuyq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xozhybwrra .gt_row_group_first th {
+#zhnndmkuyq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xozhybwrra .gt_summary_row {
+#zhnndmkuyq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2208,16 +2215,16 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 5px;
 }
 
-#xozhybwrra .gt_first_summary_row {
+#zhnndmkuyq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_first_summary_row.thick {
+#zhnndmkuyq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xozhybwrra .gt_last_summary_row {
+#zhnndmkuyq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2227,7 +2234,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-bottom-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_grand_summary_row {
+#zhnndmkuyq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2237,7 +2244,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 5px;
 }
 
-#xozhybwrra .gt_first_grand_summary_row {
+#zhnndmkuyq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2247,7 +2254,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-top-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_last_grand_summary_row_top {
+#zhnndmkuyq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2257,11 +2264,11 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-bottom-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_striped {
+#zhnndmkuyq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xozhybwrra .gt_table_body {
+#zhnndmkuyq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2270,7 +2277,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-bottom-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_footnotes {
+#zhnndmkuyq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2284,7 +2291,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-right-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_footnote {
+#zhnndmkuyq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2293,7 +2300,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 5px;
 }
 
-#xozhybwrra .gt_sourcenotes {
+#zhnndmkuyq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2307,7 +2314,7 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   border-right-color: #D3D3D3;
 }
 
-#xozhybwrra .gt_sourcenote {
+#zhnndmkuyq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2315,77 +2322,77 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
   padding-right: 5px;
 }
 
-#xozhybwrra .gt_left {
+#zhnndmkuyq .gt_left {
   text-align: left;
 }
 
-#xozhybwrra .gt_center {
+#zhnndmkuyq .gt_center {
   text-align: center;
 }
 
-#xozhybwrra .gt_right {
+#zhnndmkuyq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xozhybwrra .gt_font_normal {
+#zhnndmkuyq .gt_font_normal {
   font-weight: normal;
 }
 
-#xozhybwrra .gt_font_bold {
+#zhnndmkuyq .gt_font_bold {
   font-weight: bold;
 }
 
-#xozhybwrra .gt_font_italic {
+#zhnndmkuyq .gt_font_italic {
   font-style: italic;
 }
 
-#xozhybwrra .gt_super {
+#zhnndmkuyq .gt_super {
   font-size: 65%;
 }
 
-#xozhybwrra .gt_footnote_marks {
+#zhnndmkuyq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xozhybwrra .gt_asterisk {
+#zhnndmkuyq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xozhybwrra .gt_indent_1 {
+#zhnndmkuyq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xozhybwrra .gt_indent_2 {
+#zhnndmkuyq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xozhybwrra .gt_indent_3 {
+#zhnndmkuyq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xozhybwrra .gt_indent_4 {
+#zhnndmkuyq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xozhybwrra .gt_indent_5 {
+#zhnndmkuyq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xozhybwrra .katex-display {
+#zhnndmkuyq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xozhybwrra div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zhnndmkuyq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="Sector" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Sector</th>
@@ -2506,16 +2513,16 @@ Table&nbsp;8: Total Emissions by Sector in Nigeria (Year 2022)
 <td class="gt_row gt_right" headers="Total">89,898.8</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="Sector">4661. Wholesale of solid, liquid and gaseous fuels and related products</td>
-<td class="gt_row gt_right" headers="Total">1,950,935.7</td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_left" headers="Sector">5110. Passenger air transport</td>
 <td class="gt_row gt_right" headers="Total">345,567.2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_left" headers="Sector">9999. Undetermined</td>
 <td class="gt_row gt_right" headers="Total">17,286,233.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Sector">NA. NA</td>
+<td class="gt_row gt_right" headers="Total">1,950,935.7</td>
 </tr>
 </tbody>
 </table>
@@ -2651,13 +2658,14 @@ UNSD. 2023. <span>“Energy Statistics Database 2021: Notes on Sources.”</span
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

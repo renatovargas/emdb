@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -87,14 +87,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-858f586298d17259b84a7299c9278920.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-13a8c907e9a8152a2dc7fb04cae9e79d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -134,6 +135,8 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PolOpT EMDB</span>
     </a>
@@ -145,7 +148,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -181,6 +184,10 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -295,7 +302,7 @@ div.csl-indent {
 <section id="preliminaries" class="level2">
 <h2 class="anchored" data-anchor-id="preliminaries">Preliminaries</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean workspace</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean workspace</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
@@ -303,7 +310,7 @@ div.csl-indent {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="datasets" class="level2">
@@ -312,7 +319,7 @@ div.csl-indent {
 <section id="edgar" class="level3">
 <h3 class="anchored" data-anchor-id="edgar">EDGAR</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDGAR</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># EDGAR</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>edgar <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/edgar/EDGAR_AR5_GHG_1970_2023.xlsx"</span>,</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">skip =</span> <span class="dv">9</span>,</span>
@@ -341,13 +348,13 @@ div.csl-indent {
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>edgar_f_gases <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/edgar/EDGAR_AR5g_F-gases_1990_2023.xlsx"</span>,</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">skip =</span> <span class="dv">9</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">sheet =</span> <span class="st">"IPCC 2006"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">sheet =</span> <span class="st">"IPCC 2006"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="faostat" class="level3">
 <h3 class="anchored" data-anchor-id="faostat">FAOSTAT</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FAOSTAT</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FAOSTAT</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>faostat_total_emissions <span class="ot">&lt;-</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readRDS</span>(</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"emdb/data/faostat/total_emissions.rds"</span>)</span>
@@ -367,22 +374,22 @@ div.csl-indent {
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"emdb/data/faostat/production.rds"</span>)</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>faostat_area_codes <span class="ot">&lt;-</span> </span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">readRDS</span>(</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"emdb/data/faostat/area_codes.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"emdb/data/faostat/area_codes.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="un-energy-data" class="level3">
 <h3 class="anchored" data-anchor-id="un-energy-data">UN Energy Data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>un_energy <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>un_energy <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/un_energy/un_energy.rds"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>During the various data cleaning steps, several equivalence tables allow us to better describe each observation. They have been created in an iterative process in which raw data is extracted, and either cleaned or linked to other data in the worksheets below.</p>
 </section>
 <section id="equivalence-tables" class="level3">
 <h3 class="anchored" data-anchor-id="equivalence-tables">Equivalence tables</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fao_countries <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fao_countries <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/classifications/equivalence.xlsx"</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sheet =</span> <span class="st">"FAOSTAT COUNTRIES"</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>fao_ipcc <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
@@ -397,11 +404,11 @@ div.csl-indent {
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>un_energy_ipcc_coef <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/coefficients/un_energy_ipcc_coefficients.xlsx"</span>,</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">sheet =</span> <span class="st">"un_energy_coefficients"</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This commented out portion was used interactively to evaluate UN energy statistics’ units of measurements, because we needed to create a conversion table from volume to TJ in a separate spreadsheet. However, some commodities are already expressed in TJ and we needed to know which, so that we could give them a conversion factor of 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test to see units of measurement for each commodity</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test to see units of measurement for each commodity</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Fortunately no duplicates.</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Use https://unstats.un.org/unsd/publication/SeriesF/SeriesF_44E.pdf</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># for conversions to TJ.</span></span>
@@ -414,7 +421,7 @@ div.csl-indent {
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   test,</span></span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   pipe("xclip -selection clipboard"),  # Unix</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   sep = "\t",</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   row.names = F)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   row.names = F)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -425,7 +432,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="edgar-databases">EDGAR databases</h2>
 <p>The first thing that we do with EDGAR is see which domains from IPCC it covers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>edgar_ipcc_names <span class="ot">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>edgar_ipcc_names <span class="ot">&lt;-</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">code      =</span> <span class="fu">unique</span>(</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      edgar<span class="sc">$</span>ipcc_code_2006_for_standard_report),</span>
@@ -434,25 +441,25 @@ div.csl-indent {
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(code)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>edgar_ipcc_names <span class="sc">|&gt;</span> </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="kdslvcsubt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kdslvcsubt table {
+<div id="talckjwvae" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#talckjwvae table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kdslvcsubt thead, #kdslvcsubt tbody, #kdslvcsubt tfoot, #kdslvcsubt tr, #kdslvcsubt td, #kdslvcsubt th {
+#talckjwvae thead, #talckjwvae tbody, #talckjwvae tfoot, #talckjwvae tr, #talckjwvae td, #talckjwvae th {
   border-style: none;
 }
 
-#kdslvcsubt p {
+#talckjwvae p {
   margin: 0;
   padding: 0;
 }
 
-#kdslvcsubt .gt_table {
+#talckjwvae .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -478,12 +485,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_caption {
+#talckjwvae .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kdslvcsubt .gt_title {
+#talckjwvae .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -495,7 +502,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#kdslvcsubt .gt_subtitle {
+#talckjwvae .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -507,7 +514,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#kdslvcsubt .gt_heading {
+#talckjwvae .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -519,13 +526,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_bottom_border {
+#talckjwvae .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_col_headings {
+#talckjwvae .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -540,7 +547,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_col_heading {
+#talckjwvae .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -560,7 +567,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#kdslvcsubt .gt_column_spanner_outer {
+#talckjwvae .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -572,15 +579,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#kdslvcsubt .gt_column_spanner_outer:first-child {
+#talckjwvae .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kdslvcsubt .gt_column_spanner_outer:last-child {
+#talckjwvae .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kdslvcsubt .gt_column_spanner {
+#talckjwvae .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -592,11 +599,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#kdslvcsubt .gt_spanner_row {
+#talckjwvae .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kdslvcsubt .gt_group_heading {
+#talckjwvae .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -622,7 +629,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#kdslvcsubt .gt_empty_group_heading {
+#talckjwvae .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -637,15 +644,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#kdslvcsubt .gt_from_md > :first-child {
+#talckjwvae .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kdslvcsubt .gt_from_md > :last-child {
+#talckjwvae .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kdslvcsubt .gt_row {
+#talckjwvae .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -664,7 +671,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#kdslvcsubt .gt_stub {
+#talckjwvae .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,7 +684,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#kdslvcsubt .gt_stub_row_group {
+#talckjwvae .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -691,15 +698,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#kdslvcsubt .gt_row_group_first td {
+#talckjwvae .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kdslvcsubt .gt_row_group_first th {
+#talckjwvae .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kdslvcsubt .gt_summary_row {
+#talckjwvae .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -709,16 +716,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#kdslvcsubt .gt_first_summary_row {
+#talckjwvae .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_first_summary_row.thick {
+#talckjwvae .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kdslvcsubt .gt_last_summary_row {
+#talckjwvae .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -728,7 +735,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_grand_summary_row {
+#talckjwvae .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -738,7 +745,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#kdslvcsubt .gt_first_grand_summary_row {
+#talckjwvae .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -748,7 +755,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_last_grand_summary_row_top {
+#talckjwvae .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,11 +765,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_striped {
+#talckjwvae .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kdslvcsubt .gt_table_body {
+#talckjwvae .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -771,7 +778,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_footnotes {
+#talckjwvae .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -785,7 +792,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_footnote {
+#talckjwvae .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -794,7 +801,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#kdslvcsubt .gt_sourcenotes {
+#talckjwvae .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -808,7 +815,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#kdslvcsubt .gt_sourcenote {
+#talckjwvae .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -816,77 +823,77 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#kdslvcsubt .gt_left {
+#talckjwvae .gt_left {
   text-align: left;
 }
 
-#kdslvcsubt .gt_center {
+#talckjwvae .gt_center {
   text-align: center;
 }
 
-#kdslvcsubt .gt_right {
+#talckjwvae .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kdslvcsubt .gt_font_normal {
+#talckjwvae .gt_font_normal {
   font-weight: normal;
 }
 
-#kdslvcsubt .gt_font_bold {
+#talckjwvae .gt_font_bold {
   font-weight: bold;
 }
 
-#kdslvcsubt .gt_font_italic {
+#talckjwvae .gt_font_italic {
   font-style: italic;
 }
 
-#kdslvcsubt .gt_super {
+#talckjwvae .gt_super {
   font-size: 65%;
 }
 
-#kdslvcsubt .gt_footnote_marks {
+#talckjwvae .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kdslvcsubt .gt_asterisk {
+#talckjwvae .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kdslvcsubt .gt_indent_1 {
+#talckjwvae .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kdslvcsubt .gt_indent_2 {
+#talckjwvae .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kdslvcsubt .gt_indent_3 {
+#talckjwvae .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kdslvcsubt .gt_indent_4 {
+#talckjwvae .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kdslvcsubt .gt_indent_5 {
+#talckjwvae .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kdslvcsubt .katex-display {
+#talckjwvae .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kdslvcsubt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#talckjwvae div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="code" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">code</th>
@@ -1052,7 +1059,7 @@ div.csl-indent {
 <p>We could use total CO<sub>2</sub> equivalent emissions aggregated from our <code>edgar</code> dataset, but full disaggregation by gas has been requested, so we perform our cleaning of the dataset for all of these and apply Tier 1 Global Warming Potential (GWP AR5) coefficients to individual datasets.</p>
 <p>But first we use custom function <code>transform_edgar_datasets</code> to extract the relevant IPCC items and normalize the years structure.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Requires library(tidyverse)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Requires library(tidyverse)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Recursive function with direct naming of outputs</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>transform_edgar_datasets <span class="ot">&lt;-</span> <span class="cf">function</span>(datasets, dataset_names) {</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(datasets) <span class="sc">==</span> <span class="dv">0</span>) {</span>
@@ -1082,12 +1089,12 @@ div.csl-indent {
 <span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Recursion with the rest of the datasets</span></span>
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transform_edgar_datasets</span>(datasets[<span class="sc">-</span><span class="dv">1</span>], dataset_names[<span class="sc">-</span><span class="dv">1</span>])</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="individual-datasets" class="level3">
 <h3 class="anchored" data-anchor-id="individual-datasets">Individual datasets</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>datasets <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>datasets <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  edgar_co2,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  edgar_co2bio,</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  edgar_ch4,</span>
@@ -1096,18 +1103,18 @@ div.csl-indent {
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>dataset_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"co2"</span>, <span class="st">"co2bio"</span>, <span class="st">"ch4"</span>, <span class="st">"n2o"</span>, <span class="st">"edgar_f_gases"</span>)</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">transform_edgar_datasets</span>(datasets, dataset_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">transform_edgar_datasets</span>(datasets, dataset_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "The transformed datasets have the prefix 'transformed_'"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(datasets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(datasets)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="dataset-binding-and-gwp-calculation" class="level3">
 <h3 class="anchored" data-anchor-id="dataset-binding-and-gwp-calculation">Dataset binding and GWP calculation</h3>
 <p>With the datasets transformed, we bind them together and transform to GWP.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usage</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>gwp_edgar_total2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  transformed_co2,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  transformed_co2bio,</span>
@@ -1200,7 +1207,7 @@ div.csl-indent {
 <span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>gwp_edgar_total <span class="ot">&lt;-</span> gwp_edgar_total2 <span class="sc">|&gt;</span></span>
 <span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span> <span class="fu">startsWith</span>(<span class="fu">as.character</span>(<span class="st">`</span><span class="at">IPCC Code</span><span class="st">`</span>),<span class="st">"3"</span>)</span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -1210,7 +1217,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="total-emissions">Total emissions</h3>
 <p>Now we turn our attention to FAOSTAT. First we clean the totals dataset <code>faostat_total_emissions</code>. This is because FAOSTAT includes subtotals and totals within the dataset, and we need to filter out data elements to avoid double counting.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="st">"elements"</span>, <span class="fu">as.matrix</span>(</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(faostat_total_emissions<span class="sc">$</span><span class="st">`</span><span class="at">Element Code</span><span class="st">`</span>)</span>
@@ -1223,25 +1230,25 @@ div.csl-indent {
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    faostat_total_emissions<span class="sc">$</span><span class="st">`</span><span class="at">Item</span><span class="st">`</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="gynkqvskkb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gynkqvskkb table {
+<div id="hapcwvmtuu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hapcwvmtuu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gynkqvskkb thead, #gynkqvskkb tbody, #gynkqvskkb tfoot, #gynkqvskkb tr, #gynkqvskkb td, #gynkqvskkb th {
+#hapcwvmtuu thead, #hapcwvmtuu tbody, #hapcwvmtuu tfoot, #hapcwvmtuu tr, #hapcwvmtuu td, #hapcwvmtuu th {
   border-style: none;
 }
 
-#gynkqvskkb p {
+#hapcwvmtuu p {
   margin: 0;
   padding: 0;
 }
 
-#gynkqvskkb .gt_table {
+#hapcwvmtuu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1267,12 +1274,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_caption {
+#hapcwvmtuu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gynkqvskkb .gt_title {
+#hapcwvmtuu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1284,7 +1291,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#gynkqvskkb .gt_subtitle {
+#hapcwvmtuu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1296,7 +1303,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#gynkqvskkb .gt_heading {
+#hapcwvmtuu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1308,13 +1315,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_bottom_border {
+#hapcwvmtuu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_col_headings {
+#hapcwvmtuu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1329,7 +1336,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_col_heading {
+#hapcwvmtuu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1349,7 +1356,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gynkqvskkb .gt_column_spanner_outer {
+#hapcwvmtuu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1361,15 +1368,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#gynkqvskkb .gt_column_spanner_outer:first-child {
+#hapcwvmtuu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gynkqvskkb .gt_column_spanner_outer:last-child {
+#hapcwvmtuu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gynkqvskkb .gt_column_spanner {
+#hapcwvmtuu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1381,11 +1388,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#gynkqvskkb .gt_spanner_row {
+#hapcwvmtuu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gynkqvskkb .gt_group_heading {
+#hapcwvmtuu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1411,7 +1418,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#gynkqvskkb .gt_empty_group_heading {
+#hapcwvmtuu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1426,15 +1433,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#gynkqvskkb .gt_from_md > :first-child {
+#hapcwvmtuu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gynkqvskkb .gt_from_md > :last-child {
+#hapcwvmtuu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gynkqvskkb .gt_row {
+#hapcwvmtuu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1453,7 +1460,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#gynkqvskkb .gt_stub {
+#hapcwvmtuu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1466,7 +1473,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gynkqvskkb .gt_stub_row_group {
+#hapcwvmtuu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1480,15 +1487,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#gynkqvskkb .gt_row_group_first td {
+#hapcwvmtuu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gynkqvskkb .gt_row_group_first th {
+#hapcwvmtuu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gynkqvskkb .gt_summary_row {
+#hapcwvmtuu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1498,16 +1505,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gynkqvskkb .gt_first_summary_row {
+#hapcwvmtuu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_first_summary_row.thick {
+#hapcwvmtuu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gynkqvskkb .gt_last_summary_row {
+#hapcwvmtuu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1517,7 +1524,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_grand_summary_row {
+#hapcwvmtuu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1527,7 +1534,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gynkqvskkb .gt_first_grand_summary_row {
+#hapcwvmtuu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1537,7 +1544,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_last_grand_summary_row_top {
+#hapcwvmtuu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1547,11 +1554,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_striped {
+#hapcwvmtuu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gynkqvskkb .gt_table_body {
+#hapcwvmtuu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1560,7 +1567,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_footnotes {
+#hapcwvmtuu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1574,7 +1581,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_footnote {
+#hapcwvmtuu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1583,7 +1590,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gynkqvskkb .gt_sourcenotes {
+#hapcwvmtuu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1597,7 +1604,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#gynkqvskkb .gt_sourcenote {
+#hapcwvmtuu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1605,77 +1612,77 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#gynkqvskkb .gt_left {
+#hapcwvmtuu .gt_left {
   text-align: left;
 }
 
-#gynkqvskkb .gt_center {
+#hapcwvmtuu .gt_center {
   text-align: center;
 }
 
-#gynkqvskkb .gt_right {
+#hapcwvmtuu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gynkqvskkb .gt_font_normal {
+#hapcwvmtuu .gt_font_normal {
   font-weight: normal;
 }
 
-#gynkqvskkb .gt_font_bold {
+#hapcwvmtuu .gt_font_bold {
   font-weight: bold;
 }
 
-#gynkqvskkb .gt_font_italic {
+#hapcwvmtuu .gt_font_italic {
   font-style: italic;
 }
 
-#gynkqvskkb .gt_super {
+#hapcwvmtuu .gt_super {
   font-size: 65%;
 }
 
-#gynkqvskkb .gt_footnote_marks {
+#hapcwvmtuu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gynkqvskkb .gt_asterisk {
+#hapcwvmtuu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gynkqvskkb .gt_indent_1 {
+#hapcwvmtuu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gynkqvskkb .gt_indent_2 {
+#hapcwvmtuu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gynkqvskkb .gt_indent_3 {
+#hapcwvmtuu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gynkqvskkb .gt_indent_4 {
+#hapcwvmtuu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gynkqvskkb .gt_indent_5 {
+#hapcwvmtuu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gynkqvskkb .katex-display {
+#hapcwvmtuu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gynkqvskkb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hapcwvmtuu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="V1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">V1</th>
@@ -1951,7 +1958,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>transformed_faostat_total <span class="ot">&lt;-</span> faostat_total_emissions <span class="sc">|&gt;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Item Code</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(</span>
@@ -2008,11 +2015,11 @@ div.csl-indent {
 <span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>    Year,</span>
 <span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    Unit,</span>
 <span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>    Value</span>
-<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then the resulting items:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="st">"elements"</span>, <span class="fu">as.matrix</span>(</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(transformed_faostat_total<span class="sc">$</span><span class="st">`</span><span class="at">Element Code</span><span class="st">`</span>)</span>
@@ -2025,25 +2032,25 @@ div.csl-indent {
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    transformed_faostat_total<span class="sc">$</span><span class="st">`</span><span class="at">Driver</span><span class="st">`</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="sjczyijdma" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sjczyijdma table {
+<div id="pwqhsohzus" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pwqhsohzus table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sjczyijdma thead, #sjczyijdma tbody, #sjczyijdma tfoot, #sjczyijdma tr, #sjczyijdma td, #sjczyijdma th {
+#pwqhsohzus thead, #pwqhsohzus tbody, #pwqhsohzus tfoot, #pwqhsohzus tr, #pwqhsohzus td, #pwqhsohzus th {
   border-style: none;
 }
 
-#sjczyijdma p {
+#pwqhsohzus p {
   margin: 0;
   padding: 0;
 }
 
-#sjczyijdma .gt_table {
+#pwqhsohzus .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2069,12 +2076,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_caption {
+#pwqhsohzus .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sjczyijdma .gt_title {
+#pwqhsohzus .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2086,7 +2093,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#sjczyijdma .gt_subtitle {
+#pwqhsohzus .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2098,7 +2105,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#sjczyijdma .gt_heading {
+#pwqhsohzus .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2110,13 +2117,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_bottom_border {
+#pwqhsohzus .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_col_headings {
+#pwqhsohzus .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2131,7 +2138,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_col_heading {
+#pwqhsohzus .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2151,7 +2158,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#sjczyijdma .gt_column_spanner_outer {
+#pwqhsohzus .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2163,15 +2170,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#sjczyijdma .gt_column_spanner_outer:first-child {
+#pwqhsohzus .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sjczyijdma .gt_column_spanner_outer:last-child {
+#pwqhsohzus .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sjczyijdma .gt_column_spanner {
+#pwqhsohzus .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2183,11 +2190,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#sjczyijdma .gt_spanner_row {
+#pwqhsohzus .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sjczyijdma .gt_group_heading {
+#pwqhsohzus .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2213,7 +2220,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#sjczyijdma .gt_empty_group_heading {
+#pwqhsohzus .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2228,15 +2235,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#sjczyijdma .gt_from_md > :first-child {
+#pwqhsohzus .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sjczyijdma .gt_from_md > :last-child {
+#pwqhsohzus .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sjczyijdma .gt_row {
+#pwqhsohzus .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2255,7 +2262,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#sjczyijdma .gt_stub {
+#pwqhsohzus .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2268,7 +2275,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#sjczyijdma .gt_stub_row_group {
+#pwqhsohzus .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2282,15 +2289,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#sjczyijdma .gt_row_group_first td {
+#pwqhsohzus .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sjczyijdma .gt_row_group_first th {
+#pwqhsohzus .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sjczyijdma .gt_summary_row {
+#pwqhsohzus .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2300,16 +2307,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#sjczyijdma .gt_first_summary_row {
+#pwqhsohzus .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_first_summary_row.thick {
+#pwqhsohzus .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sjczyijdma .gt_last_summary_row {
+#pwqhsohzus .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2319,7 +2326,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_grand_summary_row {
+#pwqhsohzus .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2329,7 +2336,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#sjczyijdma .gt_first_grand_summary_row {
+#pwqhsohzus .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2339,7 +2346,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_last_grand_summary_row_top {
+#pwqhsohzus .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2349,11 +2356,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_striped {
+#pwqhsohzus .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sjczyijdma .gt_table_body {
+#pwqhsohzus .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2362,7 +2369,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_footnotes {
+#pwqhsohzus .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2376,7 +2383,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_footnote {
+#pwqhsohzus .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2385,7 +2392,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#sjczyijdma .gt_sourcenotes {
+#pwqhsohzus .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2399,7 +2406,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#sjczyijdma .gt_sourcenote {
+#pwqhsohzus .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2407,77 +2414,77 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#sjczyijdma .gt_left {
+#pwqhsohzus .gt_left {
   text-align: left;
 }
 
-#sjczyijdma .gt_center {
+#pwqhsohzus .gt_center {
   text-align: center;
 }
 
-#sjczyijdma .gt_right {
+#pwqhsohzus .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sjczyijdma .gt_font_normal {
+#pwqhsohzus .gt_font_normal {
   font-weight: normal;
 }
 
-#sjczyijdma .gt_font_bold {
+#pwqhsohzus .gt_font_bold {
   font-weight: bold;
 }
 
-#sjczyijdma .gt_font_italic {
+#pwqhsohzus .gt_font_italic {
   font-style: italic;
 }
 
-#sjczyijdma .gt_super {
+#pwqhsohzus .gt_super {
   font-size: 65%;
 }
 
-#sjczyijdma .gt_footnote_marks {
+#pwqhsohzus .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sjczyijdma .gt_asterisk {
+#pwqhsohzus .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sjczyijdma .gt_indent_1 {
+#pwqhsohzus .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sjczyijdma .gt_indent_2 {
+#pwqhsohzus .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sjczyijdma .gt_indent_3 {
+#pwqhsohzus .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sjczyijdma .gt_indent_4 {
+#pwqhsohzus .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sjczyijdma .gt_indent_5 {
+#pwqhsohzus .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sjczyijdma .katex-display {
+#pwqhsohzus .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sjczyijdma div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pwqhsohzus div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="V1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">V1</th>
@@ -2552,7 +2559,7 @@ div.csl-indent {
 <section id="crops" class="level3">
 <h3 class="anchored" data-anchor-id="crops">Crops</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="st">"elements"</span>, <span class="fu">as.matrix</span>(</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(faostat_crops<span class="sc">$</span><span class="st">`</span><span class="at">Element Code</span><span class="st">`</span>)</span>
@@ -2565,25 +2572,25 @@ div.csl-indent {
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    faostat_crops<span class="sc">$</span><span class="st">`</span><span class="at">Item</span><span class="st">`</span></span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="yjshheajtp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yjshheajtp table {
+<div id="ucywunkjgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ucywunkjgw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yjshheajtp thead, #yjshheajtp tbody, #yjshheajtp tfoot, #yjshheajtp tr, #yjshheajtp td, #yjshheajtp th {
+#ucywunkjgw thead, #ucywunkjgw tbody, #ucywunkjgw tfoot, #ucywunkjgw tr, #ucywunkjgw td, #ucywunkjgw th {
   border-style: none;
 }
 
-#yjshheajtp p {
+#ucywunkjgw p {
   margin: 0;
   padding: 0;
 }
 
-#yjshheajtp .gt_table {
+#ucywunkjgw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2609,12 +2616,12 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_caption {
+#ucywunkjgw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yjshheajtp .gt_title {
+#ucywunkjgw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2626,7 +2633,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#yjshheajtp .gt_subtitle {
+#ucywunkjgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2638,7 +2645,7 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#yjshheajtp .gt_heading {
+#ucywunkjgw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2650,13 +2657,13 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_bottom_border {
+#ucywunkjgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_col_headings {
+#ucywunkjgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2671,7 +2678,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_col_heading {
+#ucywunkjgw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2691,7 +2698,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#yjshheajtp .gt_column_spanner_outer {
+#ucywunkjgw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2703,15 +2710,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#yjshheajtp .gt_column_spanner_outer:first-child {
+#ucywunkjgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yjshheajtp .gt_column_spanner_outer:last-child {
+#ucywunkjgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yjshheajtp .gt_column_spanner {
+#ucywunkjgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2723,11 +2730,11 @@ div.csl-indent {
   width: 100%;
 }
 
-#yjshheajtp .gt_spanner_row {
+#ucywunkjgw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yjshheajtp .gt_group_heading {
+#ucywunkjgw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2753,7 +2760,7 @@ div.csl-indent {
   text-align: left;
 }
 
-#yjshheajtp .gt_empty_group_heading {
+#ucywunkjgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2768,15 +2775,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#yjshheajtp .gt_from_md > :first-child {
+#ucywunkjgw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yjshheajtp .gt_from_md > :last-child {
+#ucywunkjgw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yjshheajtp .gt_row {
+#ucywunkjgw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2795,7 +2802,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#yjshheajtp .gt_stub {
+#ucywunkjgw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2808,7 +2815,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yjshheajtp .gt_stub_row_group {
+#ucywunkjgw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2822,15 +2829,15 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#yjshheajtp .gt_row_group_first td {
+#ucywunkjgw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yjshheajtp .gt_row_group_first th {
+#ucywunkjgw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yjshheajtp .gt_summary_row {
+#ucywunkjgw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2840,16 +2847,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yjshheajtp .gt_first_summary_row {
+#ucywunkjgw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_first_summary_row.thick {
+#ucywunkjgw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yjshheajtp .gt_last_summary_row {
+#ucywunkjgw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2859,7 +2866,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_grand_summary_row {
+#ucywunkjgw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2869,7 +2876,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yjshheajtp .gt_first_grand_summary_row {
+#ucywunkjgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2879,7 +2886,7 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_last_grand_summary_row_top {
+#ucywunkjgw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2889,11 +2896,11 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_striped {
+#ucywunkjgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yjshheajtp .gt_table_body {
+#ucywunkjgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2902,7 +2909,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_footnotes {
+#ucywunkjgw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2916,7 +2923,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_footnote {
+#ucywunkjgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2925,7 +2932,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yjshheajtp .gt_sourcenotes {
+#ucywunkjgw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2939,7 +2946,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#yjshheajtp .gt_sourcenote {
+#ucywunkjgw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2947,77 +2954,77 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#yjshheajtp .gt_left {
+#ucywunkjgw .gt_left {
   text-align: left;
 }
 
-#yjshheajtp .gt_center {
+#ucywunkjgw .gt_center {
   text-align: center;
 }
 
-#yjshheajtp .gt_right {
+#ucywunkjgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yjshheajtp .gt_font_normal {
+#ucywunkjgw .gt_font_normal {
   font-weight: normal;
 }
 
-#yjshheajtp .gt_font_bold {
+#ucywunkjgw .gt_font_bold {
   font-weight: bold;
 }
 
-#yjshheajtp .gt_font_italic {
+#ucywunkjgw .gt_font_italic {
   font-style: italic;
 }
 
-#yjshheajtp .gt_super {
+#ucywunkjgw .gt_super {
   font-size: 65%;
 }
 
-#yjshheajtp .gt_footnote_marks {
+#ucywunkjgw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yjshheajtp .gt_asterisk {
+#ucywunkjgw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yjshheajtp .gt_indent_1 {
+#ucywunkjgw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yjshheajtp .gt_indent_2 {
+#ucywunkjgw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yjshheajtp .gt_indent_3 {
+#ucywunkjgw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yjshheajtp .gt_indent_4 {
+#ucywunkjgw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yjshheajtp .gt_indent_5 {
+#ucywunkjgw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yjshheajtp .katex-display {
+#ucywunkjgw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yjshheajtp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ucywunkjgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="V1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">V1</th>
@@ -3199,7 +3206,7 @@ div.csl-indent {
 Listing&nbsp;1: GWP calculation for crops
 </figcaption>
 <div aria-describedby="lst-gwp-crops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>transformed_faostat_crops <span class="ot">&lt;-</span> faostat_crops <span class="sc">|&gt;</span> </span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span> <span class="st">`</span><span class="at">Element Code</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(</span>
@@ -3272,14 +3279,14 @@ Listing&nbsp;1: GWP calculation for crops
 <span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a>    Year,</span>
 <span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a>    Unit,</span>
 <span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a>    Value</span>
-<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </figure>
 </div>
 </div>
 <p>The resulting items</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="st">"Sectors"</span>, <span class="fu">as.matrix</span>(</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(transformed_faostat_crops<span class="sc">$</span><span class="st">`</span><span class="at">Sector Code</span><span class="st">`</span>)</span>
@@ -3293,25 +3300,25 @@ Listing&nbsp;1: GWP calculation for crops
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(V1,V2) <span class="sc">|&gt;</span> </span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="qvciryahtb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qvciryahtb table {
+<div id="mdcasoqxef" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mdcasoqxef table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qvciryahtb thead, #qvciryahtb tbody, #qvciryahtb tfoot, #qvciryahtb tr, #qvciryahtb td, #qvciryahtb th {
+#mdcasoqxef thead, #mdcasoqxef tbody, #mdcasoqxef tfoot, #mdcasoqxef tr, #mdcasoqxef td, #mdcasoqxef th {
   border-style: none;
 }
 
-#qvciryahtb p {
+#mdcasoqxef p {
   margin: 0;
   padding: 0;
 }
 
-#qvciryahtb .gt_table {
+#mdcasoqxef .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3337,12 +3344,12 @@ Listing&nbsp;1: GWP calculation for crops
   border-left-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_caption {
+#mdcasoqxef .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qvciryahtb .gt_title {
+#mdcasoqxef .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3354,7 +3361,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-bottom-width: 0;
 }
 
-#qvciryahtb .gt_subtitle {
+#mdcasoqxef .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3366,7 +3373,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-top-width: 0;
 }
 
-#qvciryahtb .gt_heading {
+#mdcasoqxef .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3378,13 +3385,13 @@ Listing&nbsp;1: GWP calculation for crops
   border-right-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_bottom_border {
+#mdcasoqxef .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_col_headings {
+#mdcasoqxef .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3399,7 +3406,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-right-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_col_heading {
+#mdcasoqxef .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3419,7 +3426,7 @@ Listing&nbsp;1: GWP calculation for crops
   overflow-x: hidden;
 }
 
-#qvciryahtb .gt_column_spanner_outer {
+#mdcasoqxef .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3431,15 +3438,15 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 4px;
 }
 
-#qvciryahtb .gt_column_spanner_outer:first-child {
+#mdcasoqxef .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qvciryahtb .gt_column_spanner_outer:last-child {
+#mdcasoqxef .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qvciryahtb .gt_column_spanner {
+#mdcasoqxef .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3451,11 +3458,11 @@ Listing&nbsp;1: GWP calculation for crops
   width: 100%;
 }
 
-#qvciryahtb .gt_spanner_row {
+#mdcasoqxef .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qvciryahtb .gt_group_heading {
+#mdcasoqxef .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3481,7 +3488,7 @@ Listing&nbsp;1: GWP calculation for crops
   text-align: left;
 }
 
-#qvciryahtb .gt_empty_group_heading {
+#mdcasoqxef .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3496,15 +3503,15 @@ Listing&nbsp;1: GWP calculation for crops
   vertical-align: middle;
 }
 
-#qvciryahtb .gt_from_md > :first-child {
+#mdcasoqxef .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qvciryahtb .gt_from_md > :last-child {
+#mdcasoqxef .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qvciryahtb .gt_row {
+#mdcasoqxef .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3523,7 +3530,7 @@ Listing&nbsp;1: GWP calculation for crops
   overflow-x: hidden;
 }
 
-#qvciryahtb .gt_stub {
+#mdcasoqxef .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3536,7 +3543,7 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 5px;
 }
 
-#qvciryahtb .gt_stub_row_group {
+#mdcasoqxef .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3550,15 +3557,15 @@ Listing&nbsp;1: GWP calculation for crops
   vertical-align: top;
 }
 
-#qvciryahtb .gt_row_group_first td {
+#mdcasoqxef .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qvciryahtb .gt_row_group_first th {
+#mdcasoqxef .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qvciryahtb .gt_summary_row {
+#mdcasoqxef .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3568,16 +3575,16 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 5px;
 }
 
-#qvciryahtb .gt_first_summary_row {
+#mdcasoqxef .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_first_summary_row.thick {
+#mdcasoqxef .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qvciryahtb .gt_last_summary_row {
+#mdcasoqxef .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3587,7 +3594,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-bottom-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_grand_summary_row {
+#mdcasoqxef .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3597,7 +3604,7 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 5px;
 }
 
-#qvciryahtb .gt_first_grand_summary_row {
+#mdcasoqxef .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3607,7 +3614,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-top-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_last_grand_summary_row_top {
+#mdcasoqxef .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3617,11 +3624,11 @@ Listing&nbsp;1: GWP calculation for crops
   border-bottom-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_striped {
+#mdcasoqxef .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qvciryahtb .gt_table_body {
+#mdcasoqxef .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3630,7 +3637,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-bottom-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_footnotes {
+#mdcasoqxef .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3644,7 +3651,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-right-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_footnote {
+#mdcasoqxef .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3653,7 +3660,7 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 5px;
 }
 
-#qvciryahtb .gt_sourcenotes {
+#mdcasoqxef .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3667,7 +3674,7 @@ Listing&nbsp;1: GWP calculation for crops
   border-right-color: #D3D3D3;
 }
 
-#qvciryahtb .gt_sourcenote {
+#mdcasoqxef .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3675,77 +3682,77 @@ Listing&nbsp;1: GWP calculation for crops
   padding-right: 5px;
 }
 
-#qvciryahtb .gt_left {
+#mdcasoqxef .gt_left {
   text-align: left;
 }
 
-#qvciryahtb .gt_center {
+#mdcasoqxef .gt_center {
   text-align: center;
 }
 
-#qvciryahtb .gt_right {
+#mdcasoqxef .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qvciryahtb .gt_font_normal {
+#mdcasoqxef .gt_font_normal {
   font-weight: normal;
 }
 
-#qvciryahtb .gt_font_bold {
+#mdcasoqxef .gt_font_bold {
   font-weight: bold;
 }
 
-#qvciryahtb .gt_font_italic {
+#mdcasoqxef .gt_font_italic {
   font-style: italic;
 }
 
-#qvciryahtb .gt_super {
+#mdcasoqxef .gt_super {
   font-size: 65%;
 }
 
-#qvciryahtb .gt_footnote_marks {
+#mdcasoqxef .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qvciryahtb .gt_asterisk {
+#mdcasoqxef .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qvciryahtb .gt_indent_1 {
+#mdcasoqxef .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qvciryahtb .gt_indent_2 {
+#mdcasoqxef .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qvciryahtb .gt_indent_3 {
+#mdcasoqxef .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qvciryahtb .gt_indent_4 {
+#mdcasoqxef .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qvciryahtb .gt_indent_5 {
+#mdcasoqxef .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qvciryahtb .katex-display {
+#mdcasoqxef .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qvciryahtb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mdcasoqxef div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="V1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">V1</th>
@@ -3842,7 +3849,7 @@ Listing&nbsp;1: GWP calculation for crops
 </div>
 <p>For reference</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>transformed_faostat_crops <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>transformed_faostat_crops <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">==</span> <span class="dv">2018</span>,</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    Area <span class="sc">==</span> <span class="st">"Nigeria"</span></span>
@@ -3856,29 +3863,29 @@ Listing&nbsp;1: GWP calculation for crops
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Total =</span> <span class="fu">sum</span>(Value, <span class="at">na.rm =</span> T)</span>
 <span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'Driver', 'Sector'. You can override using
 the `.groups` argument.</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="zdpxyrouqh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zdpxyrouqh table {
+<div id="tjxbiwivaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tjxbiwivaz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zdpxyrouqh thead, #zdpxyrouqh tbody, #zdpxyrouqh tfoot, #zdpxyrouqh tr, #zdpxyrouqh td, #zdpxyrouqh th {
+#tjxbiwivaz thead, #tjxbiwivaz tbody, #tjxbiwivaz tfoot, #tjxbiwivaz tr, #tjxbiwivaz td, #tjxbiwivaz th {
   border-style: none;
 }
 
-#zdpxyrouqh p {
+#tjxbiwivaz p {
   margin: 0;
   padding: 0;
 }
 
-#zdpxyrouqh .gt_table {
+#tjxbiwivaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3904,12 +3911,12 @@ the `.groups` argument.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_caption {
+#tjxbiwivaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zdpxyrouqh .gt_title {
+#tjxbiwivaz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3921,7 +3928,7 @@ the `.groups` argument.</code></pre>
   border-bottom-width: 0;
 }
 
-#zdpxyrouqh .gt_subtitle {
+#tjxbiwivaz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3933,7 +3940,7 @@ the `.groups` argument.</code></pre>
   border-top-width: 0;
 }
 
-#zdpxyrouqh .gt_heading {
+#tjxbiwivaz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3945,13 +3952,13 @@ the `.groups` argument.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_bottom_border {
+#tjxbiwivaz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_col_headings {
+#tjxbiwivaz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3966,7 +3973,7 @@ the `.groups` argument.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_col_heading {
+#tjxbiwivaz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3986,7 +3993,7 @@ the `.groups` argument.</code></pre>
   overflow-x: hidden;
 }
 
-#zdpxyrouqh .gt_column_spanner_outer {
+#tjxbiwivaz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3998,15 +4005,15 @@ the `.groups` argument.</code></pre>
   padding-right: 4px;
 }
 
-#zdpxyrouqh .gt_column_spanner_outer:first-child {
+#tjxbiwivaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zdpxyrouqh .gt_column_spanner_outer:last-child {
+#tjxbiwivaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zdpxyrouqh .gt_column_spanner {
+#tjxbiwivaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4018,11 +4025,11 @@ the `.groups` argument.</code></pre>
   width: 100%;
 }
 
-#zdpxyrouqh .gt_spanner_row {
+#tjxbiwivaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zdpxyrouqh .gt_group_heading {
+#tjxbiwivaz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4048,7 +4055,7 @@ the `.groups` argument.</code></pre>
   text-align: left;
 }
 
-#zdpxyrouqh .gt_empty_group_heading {
+#tjxbiwivaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4063,15 +4070,15 @@ the `.groups` argument.</code></pre>
   vertical-align: middle;
 }
 
-#zdpxyrouqh .gt_from_md > :first-child {
+#tjxbiwivaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zdpxyrouqh .gt_from_md > :last-child {
+#tjxbiwivaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zdpxyrouqh .gt_row {
+#tjxbiwivaz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4090,7 +4097,7 @@ the `.groups` argument.</code></pre>
   overflow-x: hidden;
 }
 
-#zdpxyrouqh .gt_stub {
+#tjxbiwivaz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4103,7 +4110,7 @@ the `.groups` argument.</code></pre>
   padding-right: 5px;
 }
 
-#zdpxyrouqh .gt_stub_row_group {
+#tjxbiwivaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4117,15 +4124,15 @@ the `.groups` argument.</code></pre>
   vertical-align: top;
 }
 
-#zdpxyrouqh .gt_row_group_first td {
+#tjxbiwivaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zdpxyrouqh .gt_row_group_first th {
+#tjxbiwivaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zdpxyrouqh .gt_summary_row {
+#tjxbiwivaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4135,16 +4142,16 @@ the `.groups` argument.</code></pre>
   padding-right: 5px;
 }
 
-#zdpxyrouqh .gt_first_summary_row {
+#tjxbiwivaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_first_summary_row.thick {
+#tjxbiwivaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zdpxyrouqh .gt_last_summary_row {
+#tjxbiwivaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4154,7 +4161,7 @@ the `.groups` argument.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_grand_summary_row {
+#tjxbiwivaz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4164,7 +4171,7 @@ the `.groups` argument.</code></pre>
   padding-right: 5px;
 }
 
-#zdpxyrouqh .gt_first_grand_summary_row {
+#tjxbiwivaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4174,7 +4181,7 @@ the `.groups` argument.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_last_grand_summary_row_top {
+#tjxbiwivaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4184,11 +4191,11 @@ the `.groups` argument.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_striped {
+#tjxbiwivaz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zdpxyrouqh .gt_table_body {
+#tjxbiwivaz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4197,7 +4204,7 @@ the `.groups` argument.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_footnotes {
+#tjxbiwivaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4211,7 +4218,7 @@ the `.groups` argument.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_footnote {
+#tjxbiwivaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4220,7 +4227,7 @@ the `.groups` argument.</code></pre>
   padding-right: 5px;
 }
 
-#zdpxyrouqh .gt_sourcenotes {
+#tjxbiwivaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4234,7 +4241,7 @@ the `.groups` argument.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#zdpxyrouqh .gt_sourcenote {
+#tjxbiwivaz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4242,77 +4249,77 @@ the `.groups` argument.</code></pre>
   padding-right: 5px;
 }
 
-#zdpxyrouqh .gt_left {
+#tjxbiwivaz .gt_left {
   text-align: left;
 }
 
-#zdpxyrouqh .gt_center {
+#tjxbiwivaz .gt_center {
   text-align: center;
 }
 
-#zdpxyrouqh .gt_right {
+#tjxbiwivaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zdpxyrouqh .gt_font_normal {
+#tjxbiwivaz .gt_font_normal {
   font-weight: normal;
 }
 
-#zdpxyrouqh .gt_font_bold {
+#tjxbiwivaz .gt_font_bold {
   font-weight: bold;
 }
 
-#zdpxyrouqh .gt_font_italic {
+#tjxbiwivaz .gt_font_italic {
   font-style: italic;
 }
 
-#zdpxyrouqh .gt_super {
+#tjxbiwivaz .gt_super {
   font-size: 65%;
 }
 
-#zdpxyrouqh .gt_footnote_marks {
+#tjxbiwivaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zdpxyrouqh .gt_asterisk {
+#tjxbiwivaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zdpxyrouqh .gt_indent_1 {
+#tjxbiwivaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zdpxyrouqh .gt_indent_2 {
+#tjxbiwivaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zdpxyrouqh .gt_indent_3 {
+#tjxbiwivaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zdpxyrouqh .gt_indent_4 {
+#tjxbiwivaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zdpxyrouqh .gt_indent_5 {
+#tjxbiwivaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zdpxyrouqh .katex-display {
+#tjxbiwivaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zdpxyrouqh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tjxbiwivaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="Driver" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Driver</th>
@@ -4440,7 +4447,7 @@ the `.groups` argument.</code></pre>
 Listing&nbsp;2: GWP calculation for animals
 </figcaption>
 <div aria-describedby="lst-gwp-animals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter elements of interest</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>transformed_faostat_livestock <span class="ot">&lt;-</span> faostat_livestock <span class="sc">|&gt;</span> </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span> <span class="st">`</span><span class="at">Element Code</span><span class="st">`</span> <span class="sc">%in%</span> <span class="fu">c</span>(</span>
@@ -4515,14 +4522,14 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a>    Year,</span>
 <span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a>    Unit,</span>
 <span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a>    Value</span>
-<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </figure>
 </div>
 </div>
 <p>The resulting items</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For reference</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">rbind</span>(</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="st">"Drivers"</span>, <span class="fu">as.matrix</span>(</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(transformed_faostat_livestock<span class="sc">$</span><span class="st">`</span><span class="at">Driver Code</span><span class="st">`</span>)</span>
@@ -4536,25 +4543,25 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  )))</span>
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>)) <span class="sc">|&gt;</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(V1,V2) <span class="sc">|&gt;</span> </span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="qxqaobalbh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qxqaobalbh table {
+<div id="gszlyyrfgq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gszlyyrfgq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qxqaobalbh thead, #qxqaobalbh tbody, #qxqaobalbh tfoot, #qxqaobalbh tr, #qxqaobalbh td, #qxqaobalbh th {
+#gszlyyrfgq thead, #gszlyyrfgq tbody, #gszlyyrfgq tfoot, #gszlyyrfgq tr, #gszlyyrfgq td, #gszlyyrfgq th {
   border-style: none;
 }
 
-#qxqaobalbh p {
+#gszlyyrfgq p {
   margin: 0;
   padding: 0;
 }
 
-#qxqaobalbh .gt_table {
+#gszlyyrfgq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4580,12 +4587,12 @@ Listing&nbsp;2: GWP calculation for animals
   border-left-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_caption {
+#gszlyyrfgq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qxqaobalbh .gt_title {
+#gszlyyrfgq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4597,7 +4604,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-bottom-width: 0;
 }
 
-#qxqaobalbh .gt_subtitle {
+#gszlyyrfgq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4609,7 +4616,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-top-width: 0;
 }
 
-#qxqaobalbh .gt_heading {
+#gszlyyrfgq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4621,13 +4628,13 @@ Listing&nbsp;2: GWP calculation for animals
   border-right-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_bottom_border {
+#gszlyyrfgq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_col_headings {
+#gszlyyrfgq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4642,7 +4649,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-right-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_col_heading {
+#gszlyyrfgq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4662,7 +4669,7 @@ Listing&nbsp;2: GWP calculation for animals
   overflow-x: hidden;
 }
 
-#qxqaobalbh .gt_column_spanner_outer {
+#gszlyyrfgq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4674,15 +4681,15 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 4px;
 }
 
-#qxqaobalbh .gt_column_spanner_outer:first-child {
+#gszlyyrfgq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qxqaobalbh .gt_column_spanner_outer:last-child {
+#gszlyyrfgq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qxqaobalbh .gt_column_spanner {
+#gszlyyrfgq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4694,11 +4701,11 @@ Listing&nbsp;2: GWP calculation for animals
   width: 100%;
 }
 
-#qxqaobalbh .gt_spanner_row {
+#gszlyyrfgq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qxqaobalbh .gt_group_heading {
+#gszlyyrfgq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4724,7 +4731,7 @@ Listing&nbsp;2: GWP calculation for animals
   text-align: left;
 }
 
-#qxqaobalbh .gt_empty_group_heading {
+#gszlyyrfgq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4739,15 +4746,15 @@ Listing&nbsp;2: GWP calculation for animals
   vertical-align: middle;
 }
 
-#qxqaobalbh .gt_from_md > :first-child {
+#gszlyyrfgq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qxqaobalbh .gt_from_md > :last-child {
+#gszlyyrfgq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qxqaobalbh .gt_row {
+#gszlyyrfgq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4766,7 +4773,7 @@ Listing&nbsp;2: GWP calculation for animals
   overflow-x: hidden;
 }
 
-#qxqaobalbh .gt_stub {
+#gszlyyrfgq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4779,7 +4786,7 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 5px;
 }
 
-#qxqaobalbh .gt_stub_row_group {
+#gszlyyrfgq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4793,15 +4800,15 @@ Listing&nbsp;2: GWP calculation for animals
   vertical-align: top;
 }
 
-#qxqaobalbh .gt_row_group_first td {
+#gszlyyrfgq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qxqaobalbh .gt_row_group_first th {
+#gszlyyrfgq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qxqaobalbh .gt_summary_row {
+#gszlyyrfgq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4811,16 +4818,16 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 5px;
 }
 
-#qxqaobalbh .gt_first_summary_row {
+#gszlyyrfgq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_first_summary_row.thick {
+#gszlyyrfgq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qxqaobalbh .gt_last_summary_row {
+#gszlyyrfgq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4830,7 +4837,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-bottom-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_grand_summary_row {
+#gszlyyrfgq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4840,7 +4847,7 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 5px;
 }
 
-#qxqaobalbh .gt_first_grand_summary_row {
+#gszlyyrfgq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4850,7 +4857,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-top-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_last_grand_summary_row_top {
+#gszlyyrfgq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4860,11 +4867,11 @@ Listing&nbsp;2: GWP calculation for animals
   border-bottom-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_striped {
+#gszlyyrfgq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qxqaobalbh .gt_table_body {
+#gszlyyrfgq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4873,7 +4880,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-bottom-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_footnotes {
+#gszlyyrfgq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4887,7 +4894,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-right-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_footnote {
+#gszlyyrfgq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4896,7 +4903,7 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 5px;
 }
 
-#qxqaobalbh .gt_sourcenotes {
+#gszlyyrfgq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4910,7 +4917,7 @@ Listing&nbsp;2: GWP calculation for animals
   border-right-color: #D3D3D3;
 }
 
-#qxqaobalbh .gt_sourcenote {
+#gszlyyrfgq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4918,77 +4925,77 @@ Listing&nbsp;2: GWP calculation for animals
   padding-right: 5px;
 }
 
-#qxqaobalbh .gt_left {
+#gszlyyrfgq .gt_left {
   text-align: left;
 }
 
-#qxqaobalbh .gt_center {
+#gszlyyrfgq .gt_center {
   text-align: center;
 }
 
-#qxqaobalbh .gt_right {
+#gszlyyrfgq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qxqaobalbh .gt_font_normal {
+#gszlyyrfgq .gt_font_normal {
   font-weight: normal;
 }
 
-#qxqaobalbh .gt_font_bold {
+#gszlyyrfgq .gt_font_bold {
   font-weight: bold;
 }
 
-#qxqaobalbh .gt_font_italic {
+#gszlyyrfgq .gt_font_italic {
   font-style: italic;
 }
 
-#qxqaobalbh .gt_super {
+#gszlyyrfgq .gt_super {
   font-size: 65%;
 }
 
-#qxqaobalbh .gt_footnote_marks {
+#gszlyyrfgq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qxqaobalbh .gt_asterisk {
+#gszlyyrfgq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qxqaobalbh .gt_indent_1 {
+#gszlyyrfgq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qxqaobalbh .gt_indent_2 {
+#gszlyyrfgq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qxqaobalbh .gt_indent_3 {
+#gszlyyrfgq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qxqaobalbh .gt_indent_4 {
+#gszlyyrfgq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qxqaobalbh .gt_indent_5 {
+#gszlyyrfgq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qxqaobalbh .katex-display {
+#gszlyyrfgq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qxqaobalbh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gszlyyrfgq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="V1" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">V1</th>
@@ -5117,7 +5124,7 @@ Listing&nbsp;2: GWP calculation for animals
 <section id="dataset-binding" class="level3">
 <h3 class="anchored" data-anchor-id="dataset-binding">Dataset binding</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gwp_faostat_total <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gwp_faostat_total <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  transformed_faostat_total,</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  transformed_faostat_crops,</span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  transformed_faostat_livestock) <span class="sc">|&gt;</span></span>
@@ -5140,7 +5147,7 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"faostat_livestock"</span>)</span>
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove only variables if they exist</span></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> objects[objects <span class="sc">%in%</span> <span class="fu">ls</span>()])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> objects[objects <span class="sc">%in%</span> <span class="fu">ls</span>()])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Originally, we only sourced data from EDGAR and FAOSTAT, but early tests showed that the way in which emissions from energy (specifically fuel combustion) are expressed in EDGAR, does not allow CGE analysts to link to specific drivers. That means that we know how many tons of CO<sub>2</sub> are emitted from electricity generation, for example, but not whether they come from the burning of coal or from diesel. An early test to overcome this limitation allowed us to use energy balances <span class="citation" data-cites="afrec_african_2024">(<a href="#ref-afrec_african_2024" role="doc-biblioref">AFREC 2024</a>)</span> to expand this dimension in the case of Nigeria. However, since we needed a source with information for countries outside that continent, we turned to the UN Energy Statistics Database <span class="citation" data-cites="unsd2023">(<a href="#ref-unsd2023" role="doc-biblioref">UNSD 2023</a>)</span> for global coverage. The publicly available individual commodity datasets were cleaned from duplicates and combined into the single product used below, but the code to conduct those first steps is also included in our repository <a href="https://github.com/renatovargas/emdb/blob/master/emdb/scripts/un_energy_processing.R">here</a> and <a href="https://github.com/renatovargas/emdb/blob/master/emdb/scripts/un_energy_original_datasets_to_RDS.R">here</a>.</p>
 </section>
@@ -5149,7 +5156,7 @@ Listing&nbsp;2: GWP calculation for animals
 <section id="un-energy-data-1" class="level1">
 <h1>UN Energy Data</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>energy_total <span class="ot">&lt;-</span> un_energy <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>energy_total <span class="ot">&lt;-</span> un_energy <span class="sc">|&gt;</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We added Driver == 1 for products that are combustion</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># We added OfInterest == for transactions that are of interest</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Driver <span class="sc">==</span> <span class="dv">1</span>,</span>
@@ -5219,14 +5226,14 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb24-68"><a href="#cb24-68" aria-hidden="true" tabindex="-1"></a>    Year,</span>
 <span id="cb24-69"><a href="#cb24-69" aria-hidden="true" tabindex="-1"></a>    Sector,</span>
 <span id="cb24-70"><a href="#cb24-70" aria-hidden="true" tabindex="-1"></a>    Driver</span>
-<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-71"><a href="#cb24-71" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="bind-final-datasets" class="level1">
 <h1>Bind Final Datasets</h1>
 <p>This is the original bind between the cleaned and processed EDGAR and FAOSTAT tables. We save a version of this stage (<code>gwp_total_emissions4</code>) for later comparisons. However, this section has been expanded to include UN Energy Statistics <span class="citation" data-cites="unsd2023">(<a href="#ref-unsd2023" role="doc-biblioref">UNSD 2023</a>)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gwp_total_emissions4 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gwp_total_emissions4 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  gwp_faostat_total,</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  gwp_edgar_total</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
@@ -5341,11 +5348,11 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb25-113"><a href="#cb25-113" aria-hidden="true" tabindex="-1"></a>gwp_total_emissions3 <span class="ot">&lt;-</span> gwp_total_emissions4 <span class="sc">|&gt;</span> </span>
 <span id="cb25-114"><a href="#cb25-114" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(</span>
 <span id="cb25-115"><a href="#cb25-115" aria-hidden="true" tabindex="-1"></a>  <span class="sc">!</span> <span class="fu">startsWith</span>(<span class="st">`</span><span class="at">IPCC Code</span><span class="st">`</span>, <span class="st">"1.A."</span>),</span>
-<span id="cb25-116"><a href="#cb25-116" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-116"><a href="#cb25-116" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>At this point, we introduce the UN Energy dataset and replace the energy part of EDGAR. First, we need to mimmick the structure. In a second step, we change the ISIC sector for all non-transformative industries’ consumption to “9999 Undetermined”. This is because, we noticed that Households are not consuming a lot of fuels that they normally do consume in the UN Energy dataset. We pool that again and redistribute it according to input consumption from all non- transformative sectors including households. Edit: during a revision, we realized that aviation fuel is mainly used by the aviation industry (except for niche applications) so we assigned all of it as inputs from “5110. Passenger air transport”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>energy_addition <span class="ot">&lt;-</span> energy_total <span class="sc">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>energy_addition <span class="ot">&lt;-</span> energy_total <span class="sc">|&gt;</span> </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Sector =</span> </span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">if_else</span>(</span>
@@ -5400,11 +5407,11 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a>    Driver,</span>
 <span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>    Unit, </span>
 <span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a>    Value</span>
-<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is where we perform the final bind between the cleaned and processed UN Energy Statistics data and the previous bind between EDGAR and FAOSTAT.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gwp_total_emissions2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gwp_total_emissions2 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  energy_addition,</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions3) <span class="sc">|&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -5441,11 +5448,11 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">IPCC Code</span><span class="st">`</span>,</span>
 <span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Category,</span></span>
 <span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>    Driver</span>
-<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>One thing that we want to do is keep only those countries that have the whole set of IPCC codes, we accomplish that with:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a reference set of required IPCC codes</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a reference set of required IPCC codes</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>required_ipcc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1."</span>, <span class="st">"3."</span>, <span class="st">"4."</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify countries that have all required IPCC codes</span></span>
@@ -5463,14 +5470,14 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    gwp_total_emissions2<span class="sc">$</span>ISO3 <span class="sc">%in%</span> </span>
 <span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(valid_countries[valid_countries]), ]</span>
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>number_of_countries <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gwp_total_emissions<span class="sc">$</span>Area))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>number_of_countries <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(gwp_total_emissions<span class="sc">$</span>Area))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And we establish that we have 218 available in the dataset.</p>
 <section id="final-pivot" class="level3">
 <h3 class="anchored" data-anchor-id="final-pivot">Final Pivot</h3>
 <p>As a request from CGE practitioners, we provide a version of the dataset where we pivot the ISIC information to the columns. However, since social accounting matrices intended for agricultural sector analysis disaggregate crops and animals at a finer detail than 4-digit ISIC, we concatenate ISIC sectors with individual animal or crop elements and pivot that into columns. We make the original disaggregated dataset, as well as the concatenated and its pivot <a href="https://renatovargas.github.io/emdb/download.html">available for download</a> for practitioners’ convenience.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>isic_pivot <span class="ot">&lt;-</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>isic_pivot <span class="ot">&lt;-</span> </span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions <span class="sc">|&gt;</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(</span>
@@ -5493,7 +5500,7 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_fn =</span> sum,</span>
 <span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_sort =</span> T) <span class="sc">|&gt;</span> </span>
 <span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Total =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric) <span class="sc">&amp;</span> <span class="sc">-</span><span class="dv">3</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Total =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric) <span class="sc">&amp;</span> <span class="sc">-</span>Year), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>isic_long <span class="ot">&lt;-</span> gwp_total_emissions <span class="sc">|&gt;</span> </span>
@@ -5515,14 +5522,14 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">ISIC Detail</span><span class="st">`</span>,</span>
 <span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>    Unit,</span>
 <span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>    Value</span>
-<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We save versions in R’s RDS format which allows for very small file downloads, but we are aware that the most common format is CSV, which due to the repetition of strings can be very large and surpass our repository’s limitations. However, the code provided in <a href="#lst-save-compress-csv" class="quarto-xref">Listing&nbsp;3</a> allows us to compress before uploading and make it available in our downloads page. Note that both saves code windows below are commented out so that Quarto doesn’t perform these computations every time we make changes to the documentation or website. However, if you make any changes to the code above, you need to uncomment these so that your results are reflected in the final downloads.</p>
 </section>
 <section id="saving-to-rds" class="level3">
 <h3 class="anchored" data-anchor-id="saving-to-rds">Saving to RDS</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # And save to RDS</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # And save to RDS</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions,</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/outputs/gwp_total_emissions.rds"</span>)</span>
@@ -5534,11 +5541,11 @@ Listing&nbsp;2: GWP calculation for animals
 <span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/outputs/gwp_total_emissions_pivot.rds"</span>)</span>
 <span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># For comparisons we keep EDGAR + FAOSTAT</span></span>
 <span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions4,</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions,</span>
 <span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/outputs/gwp_emi_edgar_fao_DO_NOT_USE.rds"</span>)</span>
 <span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(</span>
 <span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  energy_total,</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/outputs/energy_total_DO_NOT_USE.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"emdb/data/outputs/energy_total_DO_NOT_USE.rds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="saving-to-zip-and-compress" class="level3">
@@ -5550,7 +5557,7 @@ Listing&nbsp;2: GWP calculation for animals
 Listing&nbsp;3: Save CSV and compress to ZIP
 </figcaption>
 <div aria-describedby="lst-save-compress-csv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total Emissions</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total Emissions</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  gwp_total_emissions,</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">na =</span> <span class="st">""</span>,</span>
@@ -5598,7 +5605,7 @@ Listing&nbsp;3: Save CSV and compress to ZIP
 <span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the uncompressed CSV file</span></span>
-<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"emdb/data/outputs/gwp_total_emissions_pivot.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">"emdb/data/outputs/gwp_total_emissions_pivot.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </figure>
 </div>
@@ -5677,13 +5684,14 @@ UNSD. 2023. <span>“Energy Statistics Database 2021: Notes on Sources.”</span
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

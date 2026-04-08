@@ -1,0 +1,170 @@
+---
+title: "Is the wholesale of solid fuels a driver of emissions?"
+author:
+  - name: "Renato Vargas"
+    id: rv
+    # email: renovargas@gmail.com
+    affiliation: 
+      - name: "Consultant for FAO"
+format: html
+bibliography: references.bib
+---
+
+# Context
+
+A database user has found that in Mozambique, the activity **4661_Wholesale of solid, liquid and gaseous fuels and related products 1.B.1 Solid Fuels** is responsible for 35.8% of emissions, which seems improbable, given its
+service sector nature.
+
+Our intuition was originally that it is probable that this industry was a heavy purchaser of fuel, not for consumption, but for resale and we mistakenly calculated emissions for it. One of the assumptions in constructing the database is that whoever purchases fuel, burns it in the analysis period in a combustion proces. In this session, we explore which tags does the input data assign to those values. First, we try our final product `gwp_total_emissions_long.rds`, which carried over the identifiers from energy balances in the columns `IPCC Code`, `IPCC`, and `Category`. Should that be unsuccessful, we will analyze the energy balances themselves. 
+
+# Preliminaries
+
+We start by loading a few libraries that will help in our exploratory analysis. 
+
+```{r}
+#| warning: false
+#| message: false
+#| label: libraries
+
+library(tidyverse)
+library(gt)
+library(ggplot2)
+```
+
+# Data exploration
+
+We first open our database, which lives in our ouptuts folder. 
+
+```{r}
+#| label: read-processed-data
+total_emissions <- readRDS("emdb/data/outputs/gwp_total_emissions_long.rds")
+```
+
+Since the problem was found on Mozambique, let's filter to focus on that country. We will also group by IPCC source and emission type to what is going on.
+
+
+```{r}
+#| label: moz-filter
+#| warning: false
+
+moz_table <- total_emissions |>
+  filter(
+    ISO3 == "MOZ",
+    Value != 0
+  ) |>
+  mutate(
+    `ISIC Detail Short` = paste0(
+      str_sub(`ISIC Detail`, start = 1, end = 29),
+      "..."
+    )
+  ) |>
+  group_by(
+    `IPCC Code`,
+    IPCC,
+    `ISIC Detail Short`,
+    Category
+  ) |>
+  summarize(
+    `Total Emissions` = sum(Value, na.rm = T)
+  ) |>
+  ungroup() |>
+  mutate(
+    `Percent` = (`Total Emissions` / sum(`Total Emissions`)) * 100
+  )
+```
+
+Let's make a table to see what that looks like.
+
+```{r}
+#| label: tbl-moz-emissions
+#| warning: false
+#| echo: false
+#| tbl-cap: "Total Emissions for Mozambique by IPCC and ISIC Category"
+
+moz_table |>
+  mutate(Group_Label = paste(`IPCC Code`, "-", IPCC)) |>
+  select(-`IPCC Code`, -IPCC) |>
+  group_by(Group_Label) |>
+  gt() |>
+  tab_style(
+    style = list(
+      cell_text(weight = "bold", size = "large", color = "#204a87"),
+      cell_fill(color = "#d9e9f3")
+    ),
+    locations = cells_row_groups()
+  ) |>
+  tab_options(row_group.as_column = FALSE) |>
+  cols_align(
+    align = "left",
+    columns = c(`ISIC Detail Short`, Category)
+  ) |>
+  cols_align(
+    align = "right",
+    columns = c(`Total Emissions`, Percent)
+  ) |>
+  text_transform(
+    locations = cells_body(columns = `ISIC Detail Short`),
+    fn = function(x) str_replace_all(x, "_", " ")
+  ) |>
+  fmt_number(columns = `Total Emissions`, decimals = 1) |>
+  fmt_percent(columns = Percent, decimals = 1, scale_values = FALSE) |>
+  grand_summary_rows(
+    columns = c(`Total Emissions`, Percent),
+    fns = list(Total = ~ sum(., na.rm = TRUE)),
+    fmt = list(
+      ~ fmt_number(., columns = `Total Emissions`, decimals = 2),
+      ~ fmt_percent(., columns = Percent, decimals = 1, scale_values = FALSE)
+    )
+  )
+```
+
+# Results
+
+We can see that **"4661 Wholesale of solid, liquid and gaseous fuels and related products 1.B.1 Solid Fuels"** belongs to **"Fugitive Emissions"**, which in the context of UN energy balances refers to the "_intentional or unintentional release of gases during the extraction, processing, transformation, and transportation of fossil fuels, excluding emissions from fuel combustion_". We can also corroborate that there is no driver associated with the emission in the final Emissions Database (EMDB) that we put together, which means that it was not subject to our estimations from the UN energy dataset, because emission coefficients are associated with drivers. 
+
+```{r}
+#| label: tbl-solidfuels
+#| tbl-cap: "Driver of fugitive emissions"
+#| warning: false
+#| echo: false
+
+total_emissions |>
+  filter(
+    ISO3 == "MOZ",
+    `IPCC Code` == "1.B.1",
+    Value != 0
+  ) |>
+  mutate(
+    `ISIC Detail ` = paste0(
+      str_sub(`ISIC Detail`, start = 1, end = 29),
+      "..."
+    )
+  ) |>
+  group_by(
+    `ISIC Detail `,
+    Category,
+    Driver
+  ) |>
+  summarize(
+    `Total Emissions` = sum(Value, na.rm = T)
+  ) |>
+  ungroup() |>
+  gt() |>
+  fmt_number(columns = `Total Emissions`, decimals = 1)
+
+```
+
+Upon closer inspection of the relevant section in [the methodological document](./emissions_db_construction.qmd#tbl-edgar-domains) and the [processing step](./emdb_processing.html#bind-final-datasets) in the code we can see that this data comes directly from the EDGAR dataset. More specifically we can see that we only replaced elements `1.A.*` with our own estimates from coefficients, while the offending element belongs to `1.B.*`.
+
+```{r}
+#| lst-label: lst-edgar-filter
+#| lst-cap: "Filter in processing code only replaces 1.A. (! negates match)"
+#| eval: false
+
+gwp_total_emissions3 <- gwp_total_emissions4 |>
+  filter(
+    !startsWith(`IPCC Code`, "1.A."),
+  )
+```
+
+Knowing that the estimate is correct, the fault lies in our process step where we associate each emission from Edgar to an ISIC sector. Mozambique, while not an oil producing country, is a massive producer of Natural Gas and it is evident that that sector which is producing the fugitive emissions and not the distributing service sector. We mistakenly associated **1.B.1 Solid Fuels** with **4661 Wholesale of solid, liquid and gaseous fuels and related products**, while the correct association should be with Division **05 Mining of coal and lignite**. Since there is no driver to identify whether it is coal (ISIC 0501) or lignite(ISIC 0502), we will compromise and keep it at the division level, only identifying it as 0500 for correct ordering. This means we have updated the `GWP ISIC` spreadsheet tab in `/data/classifications/equivalence.xlsx` to reflect this change.

@@ -18,3 +18,5 @@ emdb/data/outputs/~$*
 emdb/data/outputs/gwp_total_emissions_test2.xlsx
 emdb/data/outputs/gwp_total_emissions_test_pivot.xlsx
 emdb/data/outputs/gwp_total_emissions_test2.xlsx
+
+**/*.quarto_ipynb
