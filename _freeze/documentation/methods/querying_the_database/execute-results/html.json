@@ -1,0 +1,15 @@
+{
+  "hash": "7099c9a65135fb93ca295af3e130045d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Querying the Database\"\nauthor:\n  - name: \"Renato Vargas\"\n    id: rv\n    # email: renovargas@gmail.com\n    affiliation: \n      - name: \"Consultant for FAO\"\nbibliography: references.bib\n---\n\n# Introduction\n\nIn this session, we query the database and tailor it to a particular SAM structure for Nigeria.\n\n## Libraries\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Clean workspace\nrm(list = ls())\n\n# Load libraries\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(openxlsx)\n```\n:::\n\n\n\n## Datasets\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Emissions long data\ntotal_emissions <- readRDS(\"emdb/data/outputs/gwp_total_emissions_long.rds\")\n\n# SAM Equivalence table\nequivalence <- read_xlsx(\n  \"emdb/data/sam/nga/map-emdb.xlsx\",\n  sheet = \"Equivalence\")\n\n# SAM elements\nuser_structure <- read_xlsx(\n  \"emdb/data/sam/nga/map-emdb.xlsx\",\n  sheet = \"User Structure\")\n\n# Add Undetermined to SAM elements\nundetermined_list <- as.data.frame(\n  sort(unique(total_emissions$`ISIC Detail`))[\n    startsWith(sort(unique(total_emissions$`ISIC Detail`)), \"9999\")])\ncolnames(undetermined_list) <- \"User Structure (without total)\"\n\nuser_structure <- rbind(user_structure, undetermined_list)\n```\n:::\n\n\n## Matching to SAM Structure\n\nWe ask for an equivalence structure `equivalence` in this case, between the `ISIC Detail` and the SAM. Through the use of R factors, we can make sure that the joined structure of the SAM is in the final product.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nuser_selected_area = \"Nigeria\"\nuser_selected_year = 2018\n\nfinal_product <- total_emissions |> \n  filter(\n    Area == user_selected_area,\n    Year == user_selected_year\n  ) |> \n  left_join(\n    equivalence,\n    join_by(`ISIC Detail`)\n  ) |> \n  mutate(\n    `User Equivalent` = if_else(\n      is.na(`User Equivalent`), \n      `ISIC Detail`,\n      `User Equivalent`\n    )\n  ) |>\n  mutate(\n    `User Equivalent` = factor(\n      `User Equivalent`,\n      levels = user_structure[[1]]\n    )\n  ) |> \n  pivot_wider(\n    id_cols = c(\n      Area,\n      ISO3,\n      Year,\n      `IPCC Code`,\n      IPCC,\n      # Category,\n      Driver,\n      `Emission Type`,\n      Unit\n    ),\n    names_from = c(`User Equivalent`),\n    values_from = Value,\n    values_fn = sum,\n    names_expand = T\n  ) |> \n  arrange(Unit) |> \n  mutate(\n    Total = rowSums(across(where(is.numeric) & -3), na.rm = TRUE)\n  ) |> \n  relocate( starts_with(\"9999\"), .after = Total)\n  \n# and save to file\n\n# write.xlsx(\n#   final_product,\n#   file = \"emdb/data/outputs/emissions_nigeria_2018.xlsx\"\n#   )\n```\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
