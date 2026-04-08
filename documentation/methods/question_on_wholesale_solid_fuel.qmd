@@ -73,7 +73,7 @@ moz_table <- total_emissions |>
   )
 ```
 
-Let's make a table to see what that looks like.
+Let's make a table to see what that looks like (_Edit: Since this site is created interactively using the underlying data, the tables below already have the correct encoding from the solution reached at the end of this document_).
 
 ```{r}
 #| label: tbl-moz-emissions
